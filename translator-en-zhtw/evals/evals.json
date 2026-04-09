@@ -1,0 +1,65 @@
+{
+  "skill_name": "translator-en-zhtw",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "請把以下技術文件段落翻成台灣繁體中文：\n\nThe authentication module, which was initially implemented using a session-based approach that relied on server-side storage, has been refactored to leverage JSON Web Tokens (JWTs), which are self-contained tokens that can be verified without querying the database, thereby significantly reducing latency for API calls that require user validation.",
+      "expected_output": "譯文應：拆解多層 relative clause 為短句；JWT 首次出現附全名括註；被動語態換為主動；讀起來像台灣工程師自己寫的技術說明",
+      "files": [],
+      "expectations": [
+        "JWT 首次出現時附上中文全稱（如 JSON Web Token）或反之，格式為「名稱（JWT）」或「JWT（JSON Web Token）」",
+        "不出現「它值得注意的是」「它是清楚的」等直譯虛主詞",
+        "不出現超過三個「的」字連環的定語堆疊",
+        "使用「資料庫」而非「數據庫」；使用「伺服器」而非「服務器」",
+        "「significantly reducing latency」的語義完整保留（大幅降低延遲或等效表達）"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "請把以下學術摘要翻成台灣繁體中文：\n\nThe results may partly reflect sampling bias, as the study recruited participants from a single urban university. While the findings suggest a correlation between early intervention and improved outcomes, causal claims would require further investigation with more representative samples. The effect size was modest, and these results should be interpreted with caution.",
+      "expected_output": "譯文應：嚴格保留所有 hedge（may/suggest/modest/should be interpreted with caution）；不升格任何弱主張；術語「sampling bias」首次出現加括注",
+      "files": [],
+      "expectations": [
+        "「may partly reflect」翻成「可能部分反映」之類，不出現「顯示」「確認」「證明」等升格詞",
+        "「suggest a correlation」不翻成「證明相關性」或「確認相關性」",
+        "「should be interpreted with caution」保留謹慎建議語氣，如「應審慎詮釋」「需謹慎解讀」",
+        "「sampling bias」翻成「抽樣偏誤」或加括注說明"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "請把以下商務請求信翻成台灣繁體中文：\n\nCould you possibly send me the revised draft when you get a chance? I'd also appreciate it if you could let me know whether the Q3 timeline is still on track. Thank you for your patience with this process.",
+      "expected_output": "譯文應：重建台灣中文自然的委婉請託語氣（不是逐字翻 modal）；感謝語在商務語境中用「感謝您」；不保留「你可能可以在你得到一個機會時」這類直譯",
+      "files": [],
+      "expectations": [
+        "「Could you possibly...when you get a chance」翻成「方便的話，麻煩你⋯」之類台灣自然請託，不出現逐字直譯",
+        "「Thank you for your patience」在商務語境中翻成「感謝您的耐心」或「感謝您耐心等候」，而非「謝謝你的耐心」",
+        "不出現「你可以讓我知道你是否⋯」的代詞鏈"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "請把以下段落翻成台灣繁體中文：\n\nAt the end of the day, the regulator keeps moving the goalposts, and our go-to-market strategy is dead in the water. Unless the team goes back to the drawing board and thinks outside the box, we're going to miss the boat entirely. The ball is now in our court.",
+      "expected_output": "所有 idiom 必須解碼後用台灣中文重述語義；任何字面直譯（移動球門柱、死在水裡等）都是失敗的翻譯",
+      "files": [],
+      "expectations": [
+        "「moving the goalposts」不翻成「移動球門柱」，翻成「改變評判標準」或等效語義",
+        "「dead in the water」不字面直譯，翻成「走不下去」「停擺」「毫無進展」等",
+        "「go back to the drawing board」翻成「打掉重來」「從頭規劃」等",
+        "「the ball is in our court」翻成「現在輪到我們行動」「主動權在我們手上」等"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "請把以下段落翻成台灣繁體中文：\n\nWhile it is acknowledged that the proposed timeline may be ambitious given the current resource constraints, it should be noted that failure to meet the Q3 deadline could potentially jeopardize our standing with key stakeholders who have already been briefed on the expected deliverables. It is therefore recommended that all teams prioritize this initiative above other non-critical projects.",
+      "expected_output": "譯文應：移除虛主詞（it is acknowledged / it should be noted / it is recommended）；還原主動語態；重組語序為中文自然的「讓步→風險→建議」；語氣符合正式商務書面語",
+      "files": [],
+      "expectations": [
+        "不出現「它被承認」「應被注意的是」「因此被建議」等直譯虛主詞或被動",
+        "語序符合「讓步（時程偏趕）→ 風險（Q3 未達成的後果）→ 建議（優先處理）」",
+        "「has been briefed」「it is recommended」等被動語態還原為主動語態",
+        "「jeopardize our standing」翻成「損及信譽」「影響形象」等，不是「危害地位」"
+      ]
+    }
+  ]
+}
