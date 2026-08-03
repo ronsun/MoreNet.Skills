@@ -11,7 +11,8 @@
         "不出現「它值得注意的是」「它是清楚的」等直譯虛主詞",
         "不出現超過三個「的」字連環的定語堆疊",
         "使用「資料庫」而非「數據庫」；使用「伺服器」而非「服務器」",
-        "「significantly reducing latency」的語義完整保留（大幅降低延遲或等效表達）"
+        "「significantly reducing latency」的語義完整保留（大幅降低延遲或等效表達）",
+        "譯文不是單一長句：原文的一句英文拆成至少兩句以上的中文"
       ]
     },
     {
@@ -23,7 +24,8 @@
         "「may partly reflect」翻成「可能部分反映」之類，不出現「顯示」「確認」「證明」等升格詞",
         "「suggest a correlation」不翻成「證明相關性」或「確認相關性」",
         "「should be interpreted with caution」保留謹慎建議語氣，如「應審慎詮釋」「需謹慎解讀」",
-        "「sampling bias」翻成「抽樣偏誤」或加括注說明"
+        "「sampling bias」翻成「抽樣偏誤」或加括注說明",
+        "「modest」的效果量描述保留「不大」「有限」等弱表述，不翻成「顯著」"
       ]
     },
     {
@@ -34,7 +36,8 @@
       "expectations": [
         "「Could you possibly...when you get a chance」翻成「方便的話，麻煩你⋯」之類台灣自然請託，不出現逐字直譯",
         "「Thank you for your patience」在商務語境中翻成「感謝您的耐心」或「感謝您耐心等候」，而非「謝謝你的耐心」",
-        "不出現「你可以讓我知道你是否⋯」的代詞鏈"
+        "不出現「你可以讓我知道你是否⋯」的代詞鏈",
+        "「I'd also appreciate it if」不直譯成「我也會感激如果」，而是融入請託句式"
       ]
     },
     {
@@ -43,10 +46,11 @@
       "expected_output": "所有 idiom 必須解碼後用台灣中文重述語義；任何字面直譯（移動球門柱、死在水裡等）都是失敗的翻譯",
       "files": [],
       "expectations": [
-        "「moving the goalposts」不翻成「移動球門柱」，翻成「改變評判標準」或等效語義",
+        "「moving the goalposts」不翻成「移動球門柱」，翻成「一直改規則／標準一直變」等等效語義",
         "「dead in the water」不字面直譯，翻成「走不下去」「停擺」「毫無進展」等",
         "「go back to the drawing board」翻成「打掉重來」「從頭規劃」等",
-        "「the ball is in our court」翻成「現在輪到我們行動」「主動權在我們手上」等"
+        "「the ball is in our court」翻成「現在輪到我們行動」「主動權在我們手上」等",
+        "「At the end of the day」翻成「說到底」「說穿了」等，不翻成「在一天的最後」"
       ]
     },
     {
@@ -59,6 +63,69 @@
         "語序符合「讓步（時程偏趕）→ 風險（Q3 未達成的後果）→ 建議（優先處理）」",
         "「has been briefed」「it is recommended」等被動語態還原為主動語態",
         "「jeopardize our standing」翻成「損及信譽」「影響形象」等，不是「危害地位」"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "請把以下小說片段翻成台灣繁體中文：\n\n\"Oh, come on. You can't seriously expect me to believe that,\" she said, setting down her cup a little too hard. \"Look, I was there. I saw the email before he deleted it.\"\n\n\"Well,\" he said. \"That changes things.\"",
+      "expected_output": "對話必須像台灣人講話：感嘆詞本地化（不出現「哦，拜託」「好吧，他說」）；語助詞自然；敘事動作具體；he said/she said 不機械翻成「他說／她說」堆疊",
+      "files": [],
+      "expectations": [
+        "「Oh, come on」翻成「少來」「拜託」「得了吧」等台灣口語，不翻成「哦，來吧」「哦，拜託你」",
+        "「You can't seriously expect me to believe that」重建為台灣人的說法（如「這種話你也要我信？」），不出現「你不能認真期待我相信」",
+        "「Well,」不翻成「好吧，」或「嗯，」開頭的直譯填充；可省略或轉成符合情境的停頓表達",
+        "「Look, I was there」的「Look」翻成「你聽我說」「欸」等，或自然省略，不翻成「看，」",
+        "「setting down her cup a little too hard」譯出「放杯子的力道稍重」的具體動作與情緒暗示，不直譯成「有點太用力地放下她的杯子」"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "請把以下書籍段落翻成台灣繁體中文：\n\nThe problem with best practices is that they are, by definition, descriptions of what worked somewhere else. The more faithfully you copy them, the more certain you can be that you are solving someone else's problem. Context is not a footnote to the method; it is the method.",
+      "expected_output": "測試論說文的母語重寫能力：不 1:1 對齊英文句子；「by definition」「footnote to the method」等抽象表達溶解成台灣人講這件事的方式；結尾的對比結構用中文的方式重建力道",
+      "files": [],
+      "expectations": [
+        "「by definition」不翻成「在定義上」「根據定義」硬塞句中；用「說穿了」「本質上就是」等自然融入",
+        "「solving someone else's problem」譯出「解的是別人的問題／別人的題」的語義與諷刺力道",
+        "結尾「Context is not a footnote to the method; it is the method」的對比力道在中文中重建（如「脈絡不是方法的註腳，脈絡本身就是方法」或更自然的重寫），不平淡化",
+        "譯文句子的斷句不與英文句號一一對應（至少一處合併或拆分）",
+        "沒有任何句子以「它」「它們」作主語開頭"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "請把以下幽默段落翻成台灣繁體中文：\n\nMy diet plan is simple: I eat whatever I want, and if anyone asks, I call it intuitive eating. My intuition, as it turns out, has strong opinions about cheesecake.",
+      "expected_output": "測試幽默的功能翻譯：中文讀者要能笑。第二句的擬人反轉（我的直覺對起司蛋糕有強烈意見）必須用中文的喜劇節奏重建，不能直譯成不好笑的句子",
+      "files": [],
+      "expectations": [
+        "「intuitive eating」處理成「直覺飲食」並讓下文的「直覺」呼應成梗",
+        "「as it turns out」不翻成「事實證明」「結果證明」的僵硬插入；用「結果」「後來發現」或直接重寫笑點節奏",
+        "「has strong opinions about cheesecake」的擬人幽默保留且好笑（如「我的直覺對起司蛋糕特別有主見」），不直譯成「有強烈的意見」而失去節奏",
+        "整段讀起來是中文的幽默節奏，笑點落在句尾"
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "請把以下回憶錄片段翻成台灣繁體中文：\n\nMy mother never talked about the war. What I know, I know from the silences — the way she left the room when certain songs came on, the letters she kept but never read.",
+      "expected_output": "測試抒情文的篇章級重寫：「What I know, I know from the silences」的重複結構不能直搬；名詞片語列舉（the way she..., the letters she...）轉成中文有畫面的句子；整段有中文抒情的節奏",
+      "files": [],
+      "expectations": [
+        "「What I know, I know from the silences」不翻成「我所知道的，我是從沉默中知道的」直搬結構；用中文方式重建（如「我知道的那一點點，全是從她的沉默裡拼湊出來的」）",
+        "「the way she left the room when certain songs came on」轉成有畫面的中文句（如「有些歌一放，她就起身走出房間」），不翻成「她在某些歌曲響起時離開房間的樣子」",
+        "「the letters she kept but never read」的對比張力保留（收著卻從不讀／一封也沒拆過）",
+        "整段不出現「⋯⋯的方式」「⋯⋯的樣子」承接名詞片語的翻譯腔"
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "請把以下新聞段落翻成台灣繁體中文：\n\nThe city council voted 7-2 on Tuesday to approve the controversial rezoning plan, despite objections from residents who packed the chamber for a third consecutive week. Mayor Chen, who had lobbied aggressively for the measure, called the vote \"a turning point for housing in this city.\"",
+      "expected_output": "測試新聞文體：導言重組為中文新聞句式（時間前置）；插入語（who had lobbied...）不能以「，他曾經⋯⋯，」形式嵌在句中；直接引語保留並用台灣新聞慣用引述格式",
+      "files": [],
+      "expectations": [
+        "時間「Tuesday／週二」出現在句子前段，不掛在句尾",
+        "「voted 7-2」的表決結果完整保留（7 比 2）",
+        "「who had lobbied aggressively for the measure」不以英文關係子句形式嵌入；重組為獨立敘述（如「陳市長先前大力推動此案」）",
+        "直接引語完整保留且用「」，引述動詞用台灣新聞慣用（表示、形容、稱）",
+        "「packed the chamber for a third consecutive week」譯出「連續第三週擠滿議事廳」的具體畫面"
       ]
     }
   ]
